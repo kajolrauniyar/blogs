@@ -11,28 +11,16 @@
 |
 */
 
-Route::get('/welcome', function () {
-		$first='Kajol';
-		$last='Rauniyar';
- 	/*	$full=$first." ".$last;
- 		return view ('welcome')->with("fullname",$full);*///one method to pass the data 
- 		$fullname=$first ." ". $last;
- 		$email='rauniyarkajol2608@gmail.com';
- 		$data=[];
- 		$data['email']=$email;
- 		$data['fullname']=$fullname;
- 		return view ('/welcome')->withData($data);
-});
-Route::get('/index', function () {
-    return view('index');
-});
-Route::get('/contact', function(){
+Route::get('/welcome', 'Pagescontroller@getWelcome');
+Route::get('/about', 'Pagescontroller@getAbout');
+Route::get('/contact', 'Pagescontroller@getContact');
+/*Route::get('/contact', function(){
 	return view('contact');
 });
 Route::get('/about',function(){
 	return view('about');
 });
-
+*/
 Route::resource('posts','PostController');
 
 

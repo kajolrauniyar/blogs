@@ -31,6 +31,12 @@
 
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col-md-8">
+				{{Html::linkRoute('posts.welcome','<<See ')}}
+			</div>
+		</div>
 		
 	</div>
 </div>

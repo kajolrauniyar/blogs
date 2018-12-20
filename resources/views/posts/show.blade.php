@@ -34,7 +34,7 @@
 
 		<div class="row">
 			<div class="col-md-8">
-				{{Html::linkRoute('posts.welcome','<<See ')}}
+				{{Html::linkRoute('posts.welcome','<< See All Posts',[],[])}}
 			</div>
 		</div>
 		

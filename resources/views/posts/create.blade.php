@@ -13,6 +13,8 @@
 	{!! Form::open(['route' => 'posts.store']) !!}
      	{{ Form::label('title','Title:')}}
      	{{Form::text('title',null,array('class'=>'form-control' ,'style'=>'margin-top:10px; margin-bottom:10px;','required'=>'','max-length'=>'255'))}}
+     	{{Form::label('slug','Slug:')}}
+     	{{Form::text('slug',null, array('class'=>'form-control','required'=>'','minlength'=>'5','maxlength'=>'255'))}}
      	{{Form::label('body',"Post Body:")}}
      	{{Form::textarea('body',null, array('class'=>'form-control' ,'style'=>'margin-top:10px;','required'=>' '))}}
      	{{Form::submit('Create Post',array('class'=>'btn btn-success btn-lg btn-block', 'style'=>'margin-top:20px;'))}}

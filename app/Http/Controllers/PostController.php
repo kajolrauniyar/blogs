@@ -42,12 +42,15 @@ class PostController extends Controller
         //validate the data
         $this->validate($request, array(
             'title'=>'required|max:255',
+            'slug'=>'required|alpha_dash|min:5|max:255',
             'body'=>'required'
+            
         ));
 
         //store the database
         $post= new Post;
         $post->title=$request->title;
+        $post->slug=$request->slug;
         $post->body=$request->body;
         $post->save();
 

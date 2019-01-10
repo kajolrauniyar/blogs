@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/welcome', 'Pagescontroller@getWelcome');
+Route::get('/welcome', 'Pagescontroller@getWelcome')->name('all.posts');
 Route::get('/about', 'Pagescontroller@getAbout');
 Route::get('/contact', 'Pagescontroller@getContact');
 /*Route::get('/contact', function(){

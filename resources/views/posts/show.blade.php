@@ -21,7 +21,7 @@
 				<dd>{{ date('M j, Y H:i a',strtotime($post->updated_at)) }}</dd>
 			</dl>
 		</div>
-		<hr>
+
 		<div class="row">
 			<div class="col-sm-6">
 				{!!Html::linkRoute('posts.edit','Edit',array($post->id),array('class'=>'btn btn-primary btn-block'))!!}
@@ -37,7 +37,7 @@
 
 		<div class="row">
 			<div class="col-md-8">
-				{{Html::linkRoute('posts.welcome','<< See All Posts', [] , ['class' =>'btn btn-default btn-block btn-h1-spacing'])}}
+				<a href="{{route('all.posts')}}"> See All Posts</a>
 			</div>
 		</div>
 		

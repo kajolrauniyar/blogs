@@ -39,10 +39,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         //validate the data
         $this->validate($request, array(
             'title'=>'required|max:255',
-            'slug'=>'required|alpha_dash|min:5|max:255',
             'body'=>'required'
             
         ));
@@ -50,7 +50,7 @@ class PostController extends Controller
         //store the database
         $post= new Post;
         $post->title=$request->title;
-        $post->slug=$request->slug;
+        $post->slug= str_slug($request->title);
         $post->body=$request->body;
         $post->save();
 

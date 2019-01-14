@@ -10,18 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware'=>['web']], function(){
+	Route::get('blog/{slug}',['as'=>'blog.single','uses'=>'Blogcontroller@getSingle'])->where('slug', '[\w\d\-\_]+');
+	Route::get('/welcome', 'Pagescontroller@getWelcome')->name('all.posts');
+	Route::get('/about', 'Pagescontroller@getAbout');
+	Route::get('/contact', 'Pagescontroller@getContact');
+	/*Route::get('/contact', function(){
+		return view('contact');
+	});
+	Route::get('/about',function(){
+		return view('about');
+	});
+	*/
+	Route::resource('posts','PostController');
 
-Route::get('/welcome', 'Pagescontroller@getWelcome')->name('all.posts');
-Route::get('/about', 'Pagescontroller@getAbout');
-Route::get('/contact', 'Pagescontroller@getContact');
-/*Route::get('/contact', function(){
-	return view('contact');
-});
-Route::get('/about',function(){
-	return view('about');
-});
-*/
-Route::resource('posts','PostController');
 
+});
 
 

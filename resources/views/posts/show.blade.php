@@ -10,7 +10,8 @@
 		<div class="well">
 			<dl class="dl-horizontal">
 				<dt>Url Slug:</dt>
-				<dd><a href="{{ url($post->slug) }}">{{ url($post->slug) }}</a></dd>
+				{{-- route->{{ route('blog.single',$post->slug) }} and url ->{{ url('blog/'.$post->slug) }} both are same --}}
+				<dd><a href="{{ route('blog.single',$post->slug) }}">{{ url('blog/'.$post->slug) }}</a></dd>
 			</dl>
 			<dl class="dl-horizontal">
 				<dt>Created At:</dt>

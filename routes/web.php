@@ -14,7 +14,7 @@ Route::group(['middleware'=>['web']], function(){
 	//Authentication Routes
 	Route::get('/auth/login', 'Auth\LoginController@showLoginForm');
 	Route::post('/auth/login', 'Auth\LoginController@login');
-	Route::post('/auth/logout', 'Auth\LoginController@logout');
+	Route::get('/logout', 'Auth\LoginController@logout');
 	//Registration Routes
 	Route::get('/auth/register','Auth\RegisterController@showRegistrationForm');
 	Route::post('/auth/register','Auth\RegisterController@register');
